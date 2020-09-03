@@ -8,7 +8,6 @@ class HomePage extends React.Component {
   render() {
     return (
       <div>
-       
           <SearchBar />
           <SearchFilter />
           <SearchButton />
