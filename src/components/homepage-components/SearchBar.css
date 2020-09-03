@@ -3,6 +3,13 @@
   height: 30px;
 }
 
+.foo{
+	color:white;
+	font-size: 80px;
+	text-shadow: 0 0 3px blue; 
+	text-align: center
+}
+
 #heading {
-  padding-top: 200px;
+  padding-top: 100px;
 }
