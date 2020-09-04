@@ -7,7 +7,7 @@ class SearchFilter extends React.Component {
     return (
       <div>
         <Container fluid id="container">
-          <h3>Refine Search</h3>
+          <h4 className="fil"  >Refine Search</h4>
 
           {/* Date Filter */}
           <DropdownButton
