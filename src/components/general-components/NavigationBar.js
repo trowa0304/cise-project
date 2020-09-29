@@ -11,6 +11,8 @@ class NavigationBar extends React.Component {
           <Nav className="mr-auto">
             <Nav.Link href="#home">Home</Nav.Link>
             <Nav.Link href="#features">Submit New Evidence</Nav.Link>
+            <h1>REMOVE ME AFTER</h1>
+
           </Nav>
         </Navbar>
       </div>
