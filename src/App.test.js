@@ -1,12 +1,10 @@
-import React from "react";
-import {expect} from "chai";
+const chai = require("chai");
+const expect = chai.expect;
 
-describe("a test", () =>
+describe("Test App", () =>
 {
-    it("test array", () =>
+    it("Idk", () =>
     {
-        let array = [];
-        
-        expect(array.length).to.equal(0);
+        expect(1).to.equal(1);
     });
 });
