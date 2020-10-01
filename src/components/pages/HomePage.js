@@ -11,7 +11,7 @@ class HomePage extends React.Component {
           <SearchBar />
           <SearchFilter />
           <SearchButton />
-    
+          
       </div>
     );
   }
