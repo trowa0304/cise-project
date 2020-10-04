@@ -41,7 +41,7 @@ export default class Login extends React.Component {
                 </div>
 
                 <div align="center" class="register">
-                <label >New to SEEL?</label>
+                <label >New to SEER?</label>
                 </div>
                 <div align="center">
                 <Button className="loginButton" onClick={this.confirm}>Sign Up</Button>  
