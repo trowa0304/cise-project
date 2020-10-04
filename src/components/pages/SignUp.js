@@ -12,7 +12,7 @@ export default class SignUp extends React.Component {
 
         this.state = {
             dropDownValue: "Select an item"
-          }
+        }
     }
 
     componentDidMount() {
@@ -51,6 +51,7 @@ export default class SignUp extends React.Component {
                         className="authority-dropdown"
                         title={this.state.dropDownValue}
                     >
+                        <Dropdown.Item onClick={() => this.changeValue('Submitter')}>Submitter</Dropdown.Item>
                         <Dropdown.Item onClick={() => this.changeValue('Moderator')}>Moderator</Dropdown.Item>
                         <Dropdown.Item onClick={() => this.changeValue('Analyst')}>Analyst</Dropdown.Item>
                         <Dropdown.Item onClick={() => this.changeValue('Administrator')}>Administrator</Dropdown.Item>
