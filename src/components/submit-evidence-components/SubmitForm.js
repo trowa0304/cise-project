@@ -14,9 +14,8 @@ class SubmitForm extends React.Component {
             submitVolume: "NULL",
             submitPageNumber: "NULL",
             submitDOI: "NULL",
+            alertBox : <Alert className="alert-primary">Please fill in the form</Alert>
         };
-        
-        this.alertBox = <Alert className="alert-primary">Please fill in the form</Alert>;
         
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -28,14 +27,13 @@ class SubmitForm extends React.Component {
         fetch("https://aut-cise-api.herokuapp.com/submitEvidence/" + encodeURIComponent(this.state.submitAuthor) + "&" + encodeURIComponent(this.state.submitPublishYear) + "&" + encodeURIComponent(this.state.submitTitle) + "&" + "1" + "&" + encodeURIComponent(this.state.submitPublisher) + "&" + encodeURIComponent(this.state.submitVolume) + "&" + encodeURIComponent(this.state.submitPageNumber) + "&" + encodeURIComponent(this.state.submitDOI))
         .then(response => response.json())
         .then(data => {
-            console.log(data);
             if (data.status)
             {
-                this.alertBox = <Alert className="alert-success">Successfully added new evidence</Alert>;
+                this.setState({alertBox: <Alert className="alert-success">Successfully added new evidence</Alert>});
             }
             else
             {
-                this.alertBox = <Alert className="alert-danger">Failed to add new evidence</Alert>;
+                this.setState({alertBox: <Alert className="alert-danger">Failed to add new evidence</Alert>});
             }
         });
     }
@@ -52,7 +50,7 @@ class SubmitForm extends React.Component {
         return (
             <Container fluid className="container-size">
                 <h1>Submit Evidence</h1>
-                {this.alertBox}
+                {this.state.alertBox}
                 <Form onSubmit={this.handleSubmit}>
                     {/* Author */}
                     <Form.Group controlId="author">

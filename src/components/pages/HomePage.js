@@ -5,15 +5,16 @@ import SearchButton from "../homepage-components/SearchButton";
 import { Container } from "react-bootstrap";
 
 class HomePage extends React.Component {
-  render() {
-    return (
-      <div>
-          <SearchBar />
-          <SearchFilter />
-          <SearchButton />
-          
-      </div>
-    );
-  }
+
+    render() {
+        return (
+            <div>
+                <SearchBar />
+                <SearchFilter />
+                <SearchButton />
+
+            </div>
+        );
+    }
 }
 export default HomePage;
