@@ -1,4 +1,5 @@
 import React from "react";
+import { Alert } from "react-bootstrap";
 import "./SearchBar.css";
 
 class SearchBar extends React.Component {
