@@ -5,7 +5,7 @@ class SearchBar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            searchQuery = "null",
+            searchQuery: "null",
             alertBox: <Alert className="alert-primary">Please fill in the form</Alert>
         };
 
