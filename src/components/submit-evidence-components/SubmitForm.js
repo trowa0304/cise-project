@@ -61,7 +61,6 @@ class SubmitForm extends React.Component {
                     {/* Date */}
                     <Form.Group>
                         <Form.Label>Published Date</Form.Label>
-                        {this.state.submitPublishDate}
                         <FormControl type="date" name="submitPublishDate" onChange={this.handleChange} required></FormControl>
                     </Form.Group>
 
