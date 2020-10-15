@@ -1,7 +1,14 @@
 import React from "react";
 import { Table } from "react-bootstrap";
 
-class SubmitForm extends React.Component {
+function unixToDate(unix)
+{
+    let date = new Date(unix);
+    
+    return date.toLocaleString("en-NZ", {timeZone: "Pacific/Auckland"});
+}
+
+class SubmitForm extends React.Component {    
     render() {
         return (
             <Table>
@@ -24,7 +31,7 @@ class SubmitForm extends React.Component {
                             <td>{evidence.EvidenceID}</td>
                             <td>{evidence.EvidenceTitle}</td>
                             <td>{evidence.EvidenceAuthor}</td>
-                            <td>{evidence.EvidenceDate}</td>
+                            <td>{unixToDate(evidence.EvidenceDate)}</td>
                             <td>{evidence.EvidencePublisher}</td>
                             <td>{evidence.EvidenceVolume}</td>
                             <td>{evidence.EvidencePageNumbers}</td>
