@@ -5,9 +5,7 @@ import { Button } from "react-bootstrap";
 class SearchButton extends React.Component {
   render() {
     return (
-      <div>
-        <Button className="button-style">Search</Button>
-      </div>
+        <Button type="submit" className="button-style">Search</Button>
     );
   }
 }
