@@ -56,6 +56,7 @@ class SearchFilter extends React.Component {
                         <Dropdown.Item onClick={() => this.changeValue('Author')}>Author</Dropdown.Item>
                         <Dropdown.Item onClick={() => this.changeValue('Title')}>Title</Dropdown.Item>
                         <Dropdown.Item onClick={() => this.changeValue('Date')}>Date</Dropdown.Item>
+                        <Dropdown.Item onClick={() => this.changeValue('DOI')}>DOI</Dropdown.Item>
           </DropdownButton>
 
           Date: <DatePicker className="date" selected={this.state.startDate} onChange={this.handleChange}/>
