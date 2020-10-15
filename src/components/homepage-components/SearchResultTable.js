@@ -1,7 +1,8 @@
 import React from "react";
+import SearchItem from './SearchItem';
 import { Alert, Button, Container, Form, FormControl } from "react-bootstrap";
 
-class SubmitForm extends React.Component {
+class SearchResultTable extends React.Component {
     constructor(props)
     {
         super(props);
@@ -42,7 +43,7 @@ class SubmitForm extends React.Component {
     render() {
         return (
             <Container fluid className="container-size">
-                <h1>Submit Evidence</h1>
+                <h1>Search Result</h1>
                 {this.state.alertBox}
                 
                 <table id="resultTable">
@@ -50,7 +51,16 @@ class SubmitForm extends React.Component {
                         
                     </thead>
                     <tbody id="resultsTableBody">
-                        
+                    {this.state.news.map((item,i) =>
+                    <div key={i}>
+                    <SearchItem
+                        title = {item.title}
+                        author = {item.author}
+                        date = {item.date}
+
+                    />
+                    </div>
+                    )}
                     </tbody>
                 </table>
             </Container>
@@ -58,4 +68,4 @@ class SubmitForm extends React.Component {
     }
 }
 
-export default SubmitForm;
+export default SearchResultTable;
