@@ -8,7 +8,7 @@ class SubmitForm extends React.Component {
         super(props);
         this.state = {
             submitAuthor: "NULL",
-            submitPublishYear: "NULL",
+            submitPublishDate: "NULL",
             submitTitle: "NULL",
             submitPublisher: "NULL",
             submitVolume: "NULL",
@@ -24,7 +24,7 @@ class SubmitForm extends React.Component {
     handleSubmit(event) {
         event.preventDefault();
         
-        fetch("https://aut-cise-api.herokuapp.com/submitEvidence/" + encodeURIComponent(this.state.submitAuthor) + "&" + encodeURIComponent(this.state.submitPublishYear) + "&" + encodeURIComponent(this.state.submitTitle) + "&" + "1" + "&" + encodeURIComponent(this.state.submitPublisher) + "&" + encodeURIComponent(this.state.submitVolume) + "&" + encodeURIComponent(this.state.submitPageNumber) + "&" + encodeURIComponent(this.state.submitDOI))
+        fetch("https://aut-cise-api.herokuapp.com/submitEvidence/" + encodeURIComponent(this.state.submitAuthor) + "&" + encodeURIComponent(new Date(this.state.submitPublishDate).getTime()) + "&" + encodeURIComponent(this.state.submitTitle) + "&" + "1" + "&" + encodeURIComponent(this.state.submitPublisher) + "&" + encodeURIComponent(this.state.submitVolume) + "&" + encodeURIComponent(this.state.submitPageNumber) + "&" + encodeURIComponent(this.state.submitDOI))
         .then(response => response.json())
         .then(data => {
             if (data.status)
@@ -53,43 +53,44 @@ class SubmitForm extends React.Component {
                 {this.state.alertBox}
                 <Form onSubmit={this.handleSubmit}>
                     {/* Author */}
-                    <Form.Group controlId="author">
+                    <Form.Group>
                         <Form.Label>Author</Form.Label>
                         <FormControl name="submitAuthor" onChange={this.handleChange} placeholder="Author" required></FormControl>
                     </Form.Group>
 
-                    {/* Year */}
-                    <Form.Group controlId="year">
+                    {/* Date */}
+                    <Form.Group>
                         <Form.Label>Published Date</Form.Label>
-                        <FormControl name="submitPublishYear" onChange={this.handleChange} placeholder="Date or year" required></FormControl>
+                        {this.state.submitPublishDate}
+                        <FormControl type="date" name="submitPublishDate" onChange={this.handleChange} required></FormControl>
                     </Form.Group>
 
                     {/* Title */}
-                    <Form.Group controlId="title">
+                    <Form.Group>
                         <Form.Label>Title of Article</Form.Label>
                         <FormControl name="submitTitle" onChange={this.handleChange} placeholder="Title" required></FormControl>
                     </Form.Group>
 
                     {/* Publisher */}
-                    <Form.Group controlId="publisher">
+                    <Form.Group>
                         <Form.Label>Publisher Name</Form.Label>
                         <FormControl name="submitPublisher" onChange={this.handleChange} placeholder="Publisher Name"></FormControl>
                     </Form.Group>
 
                     {/* Volume */}
-                    <Form.Group controlId="volumeNo">
+                    <Form.Group>
                         <Form.Label>Volume</Form.Label>
                         <FormControl name="submitVolume" onChange={this.handleChange} placeholder="Vol"></FormControl>
                     </Form.Group>
 
                     {/* Page Number */}
-                    <Form.Group controlId="pageNo">
+                    <Form.Group>
                         <Form.Label>Page Number</Form.Label>
                         <FormControl name="submitPageNumber" onChange={this.handleChange} placeholder="Page Number(s)"></FormControl>
                     </Form.Group>
 
                     {/* DOI Link */}
-                    <Form.Group controlId="doi">
+                    <Form.Group>
                         <Form.Label>DOI Link</Form.Label>
                         <FormControl name="submitDOI" onChange={this.handleChange} placeholder="DOI"></FormControl>
                     </Form.Group>
